@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { TextField, Button, Typography, Box } from '@mui/material';
 import WriteblogImg from "../assets/blogwrite.png"
 import { useNavigate } from 'react-router-dom';
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
 
 const Postblogs = () => {
   const [title, setTitle] = useState('');
@@ -27,7 +29,7 @@ const Postblogs = () => {
     if (!userEmail) return alert("You must be logged in to post a blog.");
 
     try {
-      const response = await fetch("http://localhost:5000/api/v1/blogs/addblogs", {
+      const response = await fetch(`${BACKEND_URL}/api/v1/blogs/addblogs", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ title, description, image, userEmail }),
