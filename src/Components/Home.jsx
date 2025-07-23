@@ -142,13 +142,13 @@ const Home = () => {
         </div>
       )}
 
-      <h3 style={{ fontFamily: "fantasy", fontWeight: '400', color: 'green', padding:'20px', marginLeft: '2%', }}>Latest Blogs :</h3>
+      <h3 style={{ fontFamily: "fantasy", fontWeight: '400', color: 'green', padding:'20px', marginTop:'2%', }}>Latest Blogs :</h3>
       <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, padding:'30px' }}>
         {blogs.length === 0 ? (
           <Typography>No blogs found.</Typography>
         ) : (
           blogs.map((blog) => (
-            <Card key={blog._id} sx={{ width: 300, backgroundColor: '#f4f4f4', boxShadow: 1, marginLeft:'1%'}}>
+            <Card key={blog._id} sx={{ width: 300, backgroundColor: '#f4f4f4', boxShadow: 1, marginLeft:'1%',}}>
               {blog.image && (
                 <CardMedia sx={{
                       height: 220,
