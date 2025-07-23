@@ -142,7 +142,7 @@ const Home = () => {
         </div>
       )}
 
-      <h3 style={{ fontFamily: "fantasy", fontWeight: '400', color: 'green', padding:'20px' }}>Latest Blogs :</h3>
+      <h3 style={{ fontFamily: "fantasy", fontWeight: '400', color: 'green', padding:'20px', marginLeft: '2%', }}>Latest Blogs :</h3>
       <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, padding:'30px' }}>
         {blogs.length === 0 ? (
           <Typography>No blogs found.</Typography>
