@@ -9,7 +9,7 @@ require('dotenv').config();
 const app = express();
 
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: 'https://blogs-1-drff.onrender.com',
   credentials: true,
 }));
 
