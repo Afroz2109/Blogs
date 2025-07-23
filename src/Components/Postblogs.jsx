@@ -29,7 +29,7 @@ const Postblogs = () => {
     if (!userEmail) return alert("You must be logged in to post a blog.");
 
     try {
-      const response = await fetch(`${BACKEND_URL}/api/v1/blogs/addblogs", {
+      const response = await fetch(`${BACKEND_URL}/api/v1/blogs/addblogs`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ title, description, image, userEmail }),
