@@ -10,6 +10,8 @@ import {
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Img from '../assets/LoginLogo.png';
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
 
 const Signup = () => {
   const [name, setName] = useState('');
@@ -37,7 +39,7 @@ const Signup = () => {
     };
 
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/signup", formData, {
+      const res = await axios.post(`${BACKEND_URL}/api/auth/signup`, formData, {
         headers: {
           "Content-Type": "application/json"
         },
