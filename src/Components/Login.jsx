@@ -4,6 +4,7 @@ import {
 import Img from '../assets/SignupLogo.webp';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 
 const Login = () => {
@@ -19,7 +20,7 @@ const Login = () => {
 
   try {
     const response = await axios.post(
-      "http://localhost:5000/api/auth/login",
+      `${BACKEND_URL}/api/auth/login`,
       { email, password },
       {
         headers: {
