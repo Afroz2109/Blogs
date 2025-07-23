@@ -6,6 +6,8 @@ import SportsImg from "../assets/sports.jpg";
 import CelebImg from "../assets/Movie-news.jpg";
 import AddImg from "../assets/AddImg.png";
 import bootcampImg from "../assets/bootcamp.png";
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
 
 const Home = () => {
   const navigate = useNavigate();
@@ -19,7 +21,7 @@ const Home = () => {
   useEffect(() => {
     const fetchUserBlogs = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/v1/blogs/getblogs");
+        const res = await fetch(`${BACKEND_URL}/api/v1/blogs/getblogs`);
         const json = await res.json();
         const allBlogs = Array.isArray(json.data) ? json.data : [];
         setBlogs(allBlogs);
